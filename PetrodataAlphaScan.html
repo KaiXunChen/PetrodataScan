@@ -1,0 +1,47 @@
+<html>
+<head>
+	<title>Hello World</title>
+	<script type="text/javascript" src="phonegap.js"></script>
+	<script type="text/javascript" src="BarcodeScanner/www/barcodescanner.js"></script>
+	<script type="text/javascript">
+	var scanAudio=function(){
+	try{
+		var scanner=cordova.require("BarcodeScanner/plugin/BarcodeScanner");
+		scannse.scan(function(result){
+			var thisURL=result.text + '&_cordovaVersion' + device.cordova + '&_cordovaPlatform' + device.platform;
+			window.location.href=this URL;
+			}
+			function (error) {
+			navigator.notification.alerts("scanning failed: " + error);
+			});
+		}catch(e){
+			navigator.notification.alert("Scanner error; " + e);
+			}
+		};
+		
+		app.initialize();
+		
+		</script>	
+</head>
+<body>
+	<div>
+		<h1>Alpha Anywhere And PhoneGap <br/> Scan and Load </h1>
+		<div>
+			<p>Connecting to Device</p>
+			<p>Device is ready</p>
+		</div>
+		<br/>
+		<div>
+			<button onclick="window.location.href="http://192.168.168.26:81/test/a1.a5w?_cordoverVersion=" + device.cordover + "&_cordoverPlatform" + device.platform"> Load Remote Content</button>
+			<button onclick="ScanAndGo()"> Scan QR Code and GO </button>
+		</div>
+		<div>	
+			<p id="deviceproperties">
+				Loading device properties...
+			</p>
+		</div>
+	</div>
+</body>			
+
+
+</html>
